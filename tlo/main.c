@@ -3,12 +3,14 @@
 #include "math.h"
 
 int main() {
-    int a = 5;
-    int b = 3;
-    int i = 1;
-    for(i=0;i<1000;i++){
-    printf("Add: %d\n", add(a, b));
-    printf("Multiply: %d\n", multiply(a, b));}
+	int sum = 0;
+	int res = 0;
+	int i = 0;
+	for(i = 0; i < 100000000; ++i) { // 重复调用以显著拉长执行时间
+			sum += add(i, i);
+			res += multiply(i, i);
+	}
+    printf("Sum: %d, Res: %d\n", sum,res);
     return 0;
 }
 
